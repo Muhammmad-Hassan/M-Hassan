@@ -30,7 +30,7 @@ function App() {
         </div>
       </nav>
       {/* Home */}
-      <div className="h-[100%] w-[100%]  flex mt-32 items-center">
+      <div className="h-[100%] w-[100%]  flex mt-32 items-center flex-col lg:flex-row">
         <div className="h-[100%] w-[50%]  flex items-center justify-end p-8">
           <img src={mainimg} className="w-[60%]  rounded-full grayscale" />
         </div>
@@ -50,13 +50,13 @@ function App() {
               </p>
             </div>
             <div className="flex w-full h-full mt-10">
-              <div className="w-[9.4vw] bg-orange-400 h-[20vh] rounded-full  ml-3 flex items-center justify-center">
+              <div className="w-[180px] h-[180px]  bg-orange-400  rounded-full  ml-3 flex items-center justify-center">
                 <span>Resume</span>
               </div>
-              <div className="w-[9.4vw] bg-red-500 h-[20vh] rounded-full ml-3 flex items-center justify-center">
+              <div className="w-[180px] h-[180px]  bg-red-500  rounded-full ml-3 flex items-center justify-center">
                 <span>Projects</span>
               </div>
-              <div className="w-[9.4vw] bg-blue-300 h-[20vh] rounded-full  ml-3 flex items-center justify-center">
+              <div className="w-[180px] h-[180px]  bg-blue-300 rounded-full  ml-3 flex items-center justify-center">
                 <span>Contacts</span>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
-import mainimg from '../assets/main2imge.jpg'
+import mainimg from "../assets/main2imge.jpg";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -29,9 +30,11 @@ function HomePage() {
               <div className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px]  text-sm lg:text-lg   bg-orange-400  rounded-full   flex items-center justify-center">
                 <span>Resume</span>
               </div>
-              <div className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px]  text-sm lg:text-lg  bg-red-500  rounded-full ml-3 flex items-center justify-center">
-                <span>Projects</span>
-              </div>
+              <Link to={"/projects"}>
+                <div className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px]  text-sm lg:text-lg  bg-red-500  rounded-full ml-3 flex items-center justify-center">
+                  <span>Projects</span>
+                </div>
+              </Link>
               <div className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px]  lg:h-[150px] text-sm lg:text-lg bg-blue-300 rounded-full  ml-3 flex items-center justify-center">
                 <span>Contacts</span>
               </div>

@@ -21,7 +21,7 @@ function Projects() {
           </div>
         </div>
         <div className="">
-          <div className="flex mt-10 lg:mt-40 flex-col lg:flex-row  rounded-md">
+          <div className="flex mt-10 lg:mt-40 flex-col lg:flex-row ">
             <div className="">
               <h2 className="text-2xl font-bold">Project Name 02</h2>
               <p className=" lg:w-[75%] mb-5 text-justify tracking-wide mt-8 text-xl">
@@ -31,7 +31,7 @@ function Projects() {
                 this is my first portfolio and welcome to my portfolio. 
               </p>
             </div>
-            <img src={projects} className="w-[500px] ml-auto rounded-md bg-blue-300" alt="" />
+            <img src={projects} className="w-[500px] ml-auto rounded-md  bg-blue-300" alt="" />
           </div>
         </div>
         <div>
@@ -45,7 +45,7 @@ function Projects() {
                 facere iusto distinctio recusandae unde.
               </p>
             </div>
-            <img src={projects} className=" lg:mt-0 w-[450px] ml-auto  " alt="" />
+            <img src={projects} className=" lg:mt-0 w-[500px] ml-auto rounded-md " alt="" />
           </div>
         </div>
       </div>

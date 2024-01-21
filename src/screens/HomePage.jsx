@@ -16,7 +16,7 @@ function HomePage() {
         <div className="h-full w-full p-6 flex items-center justify-center lg:justify-start ">
           <div className="">
             <div className=" mb-6 lg:mb-12 lg:mt-7">
-              <h2 className="text-7xl font-bold lg:text-8xl">Hello</h2>
+              <h2 className="text-7xl font-bold lg:text-8xl">Hello <span className="text-6xl">👋</span></h2>
             </div>
             <div className="mt-2">
               <h3 className="text-2xl font-bold mb-2">A Bit About Me</h3>

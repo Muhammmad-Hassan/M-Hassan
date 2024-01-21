@@ -24,23 +24,23 @@ const Navbar = () => {
       <div
         className={` lg:flex items-center  ${
           menuOpen
-            ? "absolute flex flex-col right-0 w-full h-[100vh] bg-white z-50 shadow-xl rounded-lg top-12 "
-            : "hidden "
+            ? "absolute flex flex-col right-0 w-full h-[100vh] bg-white z-50 shadow-xl rounded-lg top-20 "
+            : "hidden"
         }   `}
       >
-        <Link to={"/"} className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
+        <Link to={"/"} onClick={toggleMenu} className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
           Home
         </Link>
         |
-        <Link  className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link  onClick={toggleMenu} className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Resume
         </Link>
         |
-        <Link to="/projects" className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link to="/projects" onClick={toggleMenu} className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Projects
         </Link>
         |
-        <Link className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link onClick={toggleMenu} className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Contact
         </Link>
       </div>

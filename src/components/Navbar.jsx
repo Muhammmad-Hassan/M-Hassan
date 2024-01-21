@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between shadow-md h-[70px] p-4 items-center fixed w-full top-0 bg-white z-30">
+    <nav className="flex justify-between  shadow-md h-[10%] p-4 items-center fixed w-full top-0 bg-white z-30">
       <div className="flex items-center justify-center ml-4 lg:ml-10">
         <span className="w-4 h-4 rounded-full bg-orange-500 lg:w-7 lg:h-7"></span>
         <h2 className="font-bold text-lg lg:text-3xl ml-2 lg:ml-3">
@@ -29,7 +29,7 @@ const Navbar = () => {
             : "hidden "
         }   `}
       >
-        <a href="#" className="lg:mx-2 rounded-lg hover:bg-blue-200 px-3">
+        <a href="#" className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
           Resume
         </a>
         |

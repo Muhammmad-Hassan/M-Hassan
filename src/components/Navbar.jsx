@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,9 +16,7 @@ const Navbar = () => {
         <h2 className="font-bold text-lg lg:text-3xl ml-2 lg:ml-3">
           <span className="text-orange-400 tracking-wider">H</span>assan
         </h2>
-        <span className="text-sm ml-1 lg:text-lg mt-1">
-    Web dev
-        </span>
+        <span className="text-sm ml-1 lg:text-lg mt-1">Web dev</span>
       </div>
       <div className="lg:hidden me-4">
         <Hamburger toggled={menuOpen} toggle={toggleMenu} />
@@ -29,17 +28,21 @@ const Navbar = () => {
             : "hidden "
         }   `}
       >
-        <a href="#" className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
+        <Link to={"/"} className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
+          Home
+        </Link>
+        |
+        <Link  className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Resume
-        </a>
+        </Link>
         |
-        <a href="#" className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link to="/projects" className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Projects
-        </a>
+        </Link>
         |
-        <a href="#" className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Contact
-        </a>
+        </Link>
       </div>
     </nav>
   );

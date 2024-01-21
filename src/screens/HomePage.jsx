@@ -1,7 +1,7 @@
 import React from "react";
 import mainimg from '../assets/main2imge.jpg'
 
-function Home() {
+function HomePage() {
   return (
     <>
       <div className="h-[100%] mb-12 w-[100%] mt-56 lg:mt-32 flex  items-center justify-center  flex-col-reverse lg:flex-row ">
@@ -43,4 +43,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

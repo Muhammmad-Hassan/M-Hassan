@@ -5,17 +5,28 @@ import gsap from "gsap";
 
 function HomePage() {
   let imgRef = useRef(null);
-  let imgRef2 = useRef(null);
-  let tl = gsap.timeline();
+  let helloRef = useRef(null);
+  let bol1Ref1 = useRef(null);
+  let bol1Ref2 = useRef(null);
+  let bol1Ref3 = useRef(null);
+  // let tl = gsap.timeline();
   useEffect(() => {
-    tl.from(imgRef, {
+    gsap.to(helloRef, {
+      opacity: 1,
+      duration: 1,
+      x:-40,
+      ease: "power3.out",
+    });
+    gsap.to(imgRef, {
       opacity: 1,
       duration: 1,
       ease: "power3.out",
     });
-    tl.to(imgRef2, {
+    gsap.to([bol1Ref1 , bol1Ref2 , bol1Ref3], {
       opacity: 1,
+      delay:.1,
       duration: .5,
+      y:10,
       ease: "power3.out",
     });
 
@@ -29,14 +40,14 @@ function HomePage() {
           <img
             ref={(el) => (imgRef = el)}
             src={mainimg}
-            className="w-[100%] h-[90%]  rounded-full grayscale lg:w-[61%] lg:h-[70%]"
+            className="w-[100%] h-[90%] opacity-0 rounded-full grayscale lg:w-[61%] lg:h-[70%]"
           />
         </div>
 
         <div className="h-full w-full p-6 flex items-center justify-center lg:justify-start ">
           <div className="">
             <div className=" mb-6 lg:mb-12 lg:mt-7">
-              <h2 ref={(el) => (imgRef2=el)} className="text-7xl opacity-0 font-bold lg:text-8xl">
+              <h2 ref={(el) => (helloRef=el)} className="text-7xl ml-4 opacity-0 font-bold lg:text-8xl">
                 Hello <span className="text-6xl">👋</span>
               </h2>
             </div>
@@ -49,15 +60,15 @@ function HomePage() {
               </p>
             </div>
             <div className="flex justify-center  h-full mt-10 w-full lg:justify-start">
-              <div className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px]  text-sm lg:text-lg   bg-orange-400  rounded-full   flex items-center justify-center">
+              <div ref={(el) =>(bol1Ref1 = el)} className="  w-[90px]  opacity-0 border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px]  text-sm lg:text-lg   bg-orange-400  rounded-full   flex items-center justify-center">
                 <span>Resume</span>
               </div>
               <Link to={"/projects"}>
-                <div className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px]  text-sm lg:text-lg  bg-red-500  rounded-full ml-3 flex items-center justify-center">
+                <div ref={(el) =>(bol1Ref2 = el)} className="  w-[90px] opacity-0 border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px]  text-sm lg:text-lg  bg-red-500  rounded-full ml-3 flex items-center justify-center">
                   <span>Projects</span>
                 </div>
               </Link>
-              <div className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px]  lg:h-[150px] text-sm lg:text-lg bg-blue-300 rounded-full  ml-3 flex items-center justify-center">
+              <div ref={(el) =>(bol1Ref3 = el)} className="  w-[90px] opacity-0 border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px]  lg:h-[150px] text-sm lg:text-lg bg-blue-300 rounded-full  ml-3 flex items-center justify-center">
                 <span>Contacts</span>
               </div>
             </div>

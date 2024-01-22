@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import projects from "../assets/projects.jpg";
-
+import gsap from "gsap";
 function Projects() {
+  let imgref1 = useRef(null);
+  let imgref2 = useRef(null);
+  let imgref3 = useRef(null);
+  useEffect(() => {
+    gsap.to([imgref1, imgref2 ,imgref3], {
+      opacity:1,
+      duration: 1,
+      x: -20,
+    });
+  }, []);
+
   return (
     <div className="h-auto w-full  flex items-center justify-center p-6  mt-24 lg:mt-52">
       <div className="h-full w-full lg:w-[75%] ">
@@ -11,13 +22,20 @@ function Projects() {
             <div className="">
               <h2 className="text-2xl font-bold">Project Name 01</h2>
               <p className=" lg:w-[75%] mb-5 text-justify tracking-wide mt-8 text-xl">
-                this is my first portfolio and welcome to my portfolio 
-                this is my first portfolio and welcome to my portfolio 
-                this is my first portfolio and welcome to my portfolio 
-                this is my first portfolio and welcome to my portfolio. 
+                this is my first portfolio and welcome to my portfolio this is
+                my first portfolio and welcome to my portfolio this is my first
+                portfolio and welcome to my portfolio this is my first portfolio
+                and welcome to my portfolio.
               </p>
             </div>
-            <img src={projects} className="w-[500px] ml-auto rounded-md bg-blue-300" alt="" />
+            <img
+              src={projects}
+              ref={(el) => {
+                imgref1 = el;
+              }}
+              className="w-[500px] opacity-0 ml-auto rounded-md bg-blue-300"
+              alt=""
+            />
           </div>
         </div>
         <div className="">
@@ -25,13 +43,20 @@ function Projects() {
             <div className="">
               <h2 className="text-2xl font-bold">Project Name 02</h2>
               <p className=" lg:w-[75%] mb-5 text-justify tracking-wide mt-8 text-xl">
-                this is my first portfolio and welcome to my portfolio 
-                this is my first portfolio and welcome to my portfolio 
-                this is my first portfolio and welcome to my portfolio 
-                this is my first portfolio and welcome to my portfolio. 
+                this is my first portfolio and welcome to my portfolio this is
+                my first portfolio and welcome to my portfolio this is my first
+                portfolio and welcome to my portfolio this is my first portfolio
+                and welcome to my portfolio.
               </p>
             </div>
-            <img src={projects} className="w-[500px] ml-auto rounded-md  bg-blue-300" alt="" />
+            <img
+             ref={(el) => {
+              imgref2 = el;
+            }}
+              src={projects}
+              className="w-[500px] ml-auto opacity-0 rounded-md  bg-blue-300"
+              alt=""
+            />
           </div>
         </div>
         <div>
@@ -45,7 +70,14 @@ function Projects() {
                 facere iusto distinctio recusandae unde.
               </p>
             </div>
-            <img src={projects} className=" lg:mt-0 w-[500px] ml-auto rounded-md " alt="" />
+            <img
+              src={projects}
+              ref={(el) => {
+                imgref3 = el;
+              }}
+              className=" lg:mt-0 w-[500px] opacity-0 ml-auto rounded-md "
+              alt=""
+            />
           </div>
         </div>
       </div>

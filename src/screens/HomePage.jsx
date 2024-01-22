@@ -47,7 +47,7 @@ function HomePage() {
         <div className="h-full w-full p-6 flex items-center justify-center lg:justify-start ">
           <div className="">
             <div className=" mb-6 lg:mb-12 lg:mt-7">
-              <h2 ref={(el) => (helloRef=el)} className="text-7xl ml-4 opacity-0 font-bold lg:text-8xl">
+              <h2 ref={(el) => (helloRef=el)} className="text-7xl ml-10 opacity-0 font-bold lg:text-8xl">
                 Hello <span className="text-6xl">👋</span>
               </h2>
             </div>

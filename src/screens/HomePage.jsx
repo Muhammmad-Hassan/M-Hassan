@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import mainimg from "../assets/main2imge.jpg";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
 
 function HomePage() {
+  let imgRef = useRef(null);
+  let imgRef2 = useRef(null);
+  let tl = gsap.timeline();
+  useEffect(() => {
+    tl.from(imgRef, {
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+    });
+    tl.from(imgRef2, {
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+    });
+
+    // Cleanup the animation on component unmount
+  }, []);
+
   return (
     <>
-      <div className="h-[100%] mb-12 w-[100%] mt-56 lg:mt-32 flex  items-center justify-center  flex-col-reverse lg:flex-row ">
+      <div className="h-[100%] mb-12 w-[100%] mt-56 lg:mt-32   flex  items-center justify-center  flex-col-reverse lg:flex-row ">
         <div className="h-[100%] w-[100%]  flex items-center justify-center p-8 lg:justify-end ">
           <img
+            ref={(el) => (imgRef = el)}
             src={mainimg}
             className="w-[100%] h-[90%]  rounded-full grayscale lg:w-[61%] lg:h-[70%]"
           />
@@ -16,7 +36,9 @@ function HomePage() {
         <div className="h-full w-full p-6 flex items-center justify-center lg:justify-start ">
           <div className="">
             <div className=" mb-6 lg:mb-12 lg:mt-7">
-              <h2 className="text-7xl font-bold lg:text-8xl">Hello <span className="text-6xl">👋</span></h2>
+              <h2 ref={(el) => (imgRef2=el)} className="text-7xl opacity-0 font-bold lg:text-8xl">
+                Hello <span className="text-6xl">👋</span>
+              </h2>
             </div>
             <div className="mt-2">
               <h3 className="text-2xl font-bold mb-2">A Bit About Me</h3>

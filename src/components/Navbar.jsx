@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import { Link } from "react-router-dom";
+import logo from  "../assets/main2imge.jpg"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,8 +12,14 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between  shadow-md h-[10%] p-4 items-center fixed w-full top-0 bg-white z-30">
-      <div className="flex items-center justify-center ml-4 lg:ml-10">
-        <span className="w-4 h-4 rounded-full bg-orange-500 lg:w-7 lg:h-7"></span>
+      <div className="flex items-center justify-center ml-2 lg:ml-8">
+        <span>
+          <img
+            className="w-9 h-9 rounded-full bg-orange-500 lg:w-12 lg:h-12"
+            src={logo}
+            alt=""
+          />
+        </span>
         <h2 className="font-bold text-lg lg:text-3xl ml-2 lg:ml-3">
           <span className="text-orange-400 tracking-wider">H</span>assan
         </h2>
@@ -28,19 +35,27 @@ const Navbar = () => {
             : "hidden"
         }   `}
       >
-        <Link to={"/"} onClick={toggleMenu} className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
+        <Link to={"/"} onClick={() =>
+            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+          } className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
           Home
         </Link>
         |
-        <Link  onClick={toggleMenu} className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Resume
         </Link>
         |
-        <Link to="/projects" onClick={toggleMenu} className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link
+          to="/projects"
+          onClick={() =>
+            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+          }
+          className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3"
+        >
           Projects
         </Link>
         |
-        <Link onClick={toggleMenu} className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
           Contact
         </Link>
       </div>

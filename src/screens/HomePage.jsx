@@ -13,9 +13,9 @@ function HomePage() {
       duration: 1,
       ease: "power3.out",
     });
-    tl.from(imgRef2, {
+    tl.to(imgRef2, {
       opacity: 1,
-      duration: 1,
+      duration: .5,
       ease: "power3.out",
     });
 

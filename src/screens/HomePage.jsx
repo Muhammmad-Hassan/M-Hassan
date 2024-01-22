@@ -26,7 +26,6 @@ function HomePage() {
       opacity: 1,
       delay:.1,
       duration: .5,
-      y:10,
       ease: "power3.out",
     });
 

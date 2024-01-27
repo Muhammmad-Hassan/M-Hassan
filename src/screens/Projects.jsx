@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import projects from "../assets/projects.jpg";
+import gsap from "gsap";
 
 function Projects() {
+  let fullPage = useRef(null)
+  useEffect(() => {
+    gsap.to(fullPage, {
+      opacity: 1,
+      duration: 2.2,
+      ease: "power3.out",
+    });
+  },[])
   return (
-    <div className="h-auto w-full  flex items-center justify-center p-6  mt-24 lg:mt-52">
+    <div ref={(el)=> (fullPage=el)} className="h-auto w-full opacity-0  flex items-center justify-center p-6  mt-24 lg:mt-52">
       <div className="h-full w-full lg:w-[75%] ">
         <h1 className="text-4xl font-bold ">Projects</h1>
         <div className="">

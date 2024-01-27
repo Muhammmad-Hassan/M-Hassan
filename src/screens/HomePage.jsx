@@ -9,11 +9,10 @@ function HomePage() {
   let bol1Ref1 = useRef(null);
   let bol1Ref2 = useRef(null);
   let bol1Ref3 = useRef(null);
-  // let tl = gsap.timeline();
   useEffect(() => {
     gsap.to(helloRef, {
       opacity: 1,
-      duration: 1,
+      duration: .5,
       x:-40,
       ease: "power3.out",
     });
@@ -25,7 +24,7 @@ function HomePage() {
     gsap.to([bol1Ref1 , bol1Ref2 , bol1Ref3], {
       opacity: 1,
       delay:.1,
-      duration: .5,
+      duration: .2,
       ease: "power3.out",
     });
 
@@ -34,7 +33,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="h-[100%] mb-12 w-[100%] mt-56 lg:mt-32   flex  items-center justify-center  flex-col-reverse lg:flex-row ">
+      <div className="h-[100%] container mb-12  mt-56 lg:mt-32   flex  items-center justify-center  flex-col-reverse lg:flex-row ">
         <div className="h-[100%] w-[100%]  flex items-center justify-center p-8 lg:justify-end ">
           <img
             ref={(el) => (imgRef = el)}

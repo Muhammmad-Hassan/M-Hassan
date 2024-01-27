@@ -37,11 +37,11 @@ const Navbar = () => {
       >
         <Link to={"/"} onClick={() =>
             menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
-          } className="lg:mx-2 rounded-lg  hover:bg-blue-200 px-3">
+          } className="lg:mx-2 rounded-lg  transition-all duration-200 hover:shadow-xl px-3">
           Home
         </Link>
         |
-        <Link className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link to={"/resume"} className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3">
           Resume
         </Link>
         |
@@ -50,12 +50,12 @@ const Navbar = () => {
           onClick={() =>
             menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
           }
-          className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3"
+          className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
         >
           Projects
         </Link>
         |
-        <Link className="lg:mx-2  rounded-lg hover:bg-blue-200 px-3">
+        <Link to={"/contact"} className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3">
           Contact
         </Link>
       </div>

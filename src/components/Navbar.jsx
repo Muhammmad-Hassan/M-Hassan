@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import { Link } from "react-router-dom";
-import logo from  "../assets/main2imge.jpg"
+import logo from "../assets/main2imge.jpg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,13 +35,23 @@ const Navbar = () => {
             : "hidden"
         }   `}
       >
-        <Link to={"/"} onClick={() =>
+        <Link
+          to={"/"}
+          onClick={() =>
             menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
-          } className="lg:mx-2 rounded-lg  transition-all duration-200 hover:shadow-xl px-3">
+          }
+          className="lg:mx-2 rounded-lg  transition-all duration-200 hover:shadow-xl px-3"
+        >
           Home
         </Link>
         |
-        <Link to={"/resume"} className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3">
+        <Link
+          onClick={() =>
+            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+          }
+          to={"/resume"}
+          className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
+        >
           Resume
         </Link>
         |
@@ -55,7 +65,13 @@ const Navbar = () => {
           Projects
         </Link>
         |
-        <Link to={"/contact"} className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3">
+        <Link
+          onClick={() =>
+            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+          }
+          to={"/contact"}
+          className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
+        >
           Contact
         </Link>
       </div>

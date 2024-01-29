@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import contact from '../assets/contact.jpg'
+import contact from '../assets/contact2.avif'
 
 function Contact() {
     let fullPage = useRef(null);
@@ -14,8 +14,8 @@ function Contact() {
     },[])
 
   return (
-    <div  ref={(el) => (fullPage = el)} className="w-full opacity-0">
-        <img src={contact} alt="" className="w-full" />
+    <div  ref={(el) => (fullPage = el)} className="w-full h-full opacity-0">
+        <img src={contact} alt="" className="w-full h-full object-cover opacity-80" />
     </div>
   )
 }

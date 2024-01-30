@@ -18,16 +18,18 @@ function Footer() {
           <h2 className=" font-semibold text-2xl">Follow Me</h2>
           <div className="flex">
             <a href="https://www.linkedin.com/in/muhammad-hassan-76a17b272">
-              <FaLinkedin className="text-3xl" />
+              <FaLinkedin className="text-3xl hover:scale-110 transition-all duration-200 " />
             </a>
             <a href="https://github.com/Muhammmad-Hassan">
-              <FaGithub className="text-3xl ml-4" />
+              <FaGithub className="text-3xl ml-4 hover:scale-110 transition-all duration-200" />
             </a>
           </div>
         </div>
         <div className="mt-6 lg:mt-0">
-          <span className="block">hellocopyright</span>
-          <span>123-456-7890</span>
+          <span className="block">
+            Copyright 2024 by Refsnes Data. All Rights Reserved.
+          </span>
+          <span>+923132402444</span>
         </div>
       </div>
     </>

@@ -50,10 +50,9 @@ const HomePage = () => {
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
-                    "Hello 👋 it`s Me Hassan",
+                    "Hello 👋 it`s Me Hassan and",
                     2000, // wait 1s before replacing "Mice" with "Hamsters"
-                    "& ➤", 
-                    2000,
+                    
                     "I am React.js developer 👨🏻‍💻 ", 
                     2000,
                     `I am Node.js  developer 👨🏻‍💻 `, 

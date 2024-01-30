@@ -23,13 +23,13 @@ const Navbar = () => {
         <h2 className="font-bold text-lg lg:text-3xl ml-2 lg:ml-3">
           <span className="text-orange-400 tracking-wider">H</span>assan
         </h2>
-        <span className="text-sm ml-1 lg:text-lg mt-1">Web dev</span>
+        <span className="text-sm ml-1 lg:text-lg mt-1 ">Web dev</span>
       </div>
       <div className="lg:hidden me-4">
         <Hamburger toggled={menuOpen} toggle={toggleMenu} />
       </div>
       <div
-        className={` lg:flex items-center  ${
+        className={` lg:flex items-center font-medium  ${
           menuOpen
             ? "absolute flex flex-col right-0 w-full h-[100vh] bg-white z-50 shadow-xl rounded-lg top-20 "
             : "hidden"

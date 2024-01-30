@@ -2,6 +2,7 @@ import React from "react";
 import mainimg from "../assets/main2imge.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 const HomePage = () => {
   const container = {
@@ -41,13 +42,35 @@ const HomePage = () => {
           <div className="">
             <div className="mb-6 lg:mb-12 lg:mt-7">
               <motion.h2
-                className="text-7xl ml-10  font-bold lg:text-8xl"
-                initial={{ opacity: 0, y: -20 }}
+                className="text-3xl font-bold md:text-4xl"
+                initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 1 }}
+                transition={{ delay: 1, duration: .6 }}
               >
-                Hello <span className="text-6xl">👋</span>
+                <TypeAnimation
+                  sequence={[
+                    // Same substring at the start will only be typed out once, initially
+                    "Hello 👋. it`s Me Hassan and",
+                    2000, // wait 1s before replacing "Mice" with "Hamsters"
+                    "I am React.js developer 👨🏻‍💻 ", 
+                    2000,
+                    `I am Node.js  developer 👨🏻‍💻 `, 
+                    2000,
+                    "I am Web  developer 👨🏻‍💻 ", 
+                    2000,
+                    
+                    "I am coder",
+                    2000,
+                    "I am Programer",
+                    2000,
+                    
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
               </motion.h2>
+              
             </div>
             <motion.div
               className="mt-2"

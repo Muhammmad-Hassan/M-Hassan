@@ -9,7 +9,7 @@ const Resume = () => {
   const start = { opacity: 0, x: -20 };
   const endhere = { opacity: 1, x: 0 };
   return (
-    <div className="  container mx-auto p-4 mt-20">
+    <div className="h-full container mx-auto p-4 mt-20">
       <section className="mb-6">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
@@ -33,7 +33,7 @@ const Resume = () => {
         <motion.h2 initial={start} animate={endhere} transition={{ delay: 0.1, duration: .1 }} className="text-2xl font-bold mb-2">Education</motion.h2>
         <div>
           <motion.h3 initial={start} animate={endhere} transition={{ delay: .2, duration: .3 }}className="text-lg font-bold">Software Engineer (In Progress)</motion.h3>
-          <motion.p initial={start} animate={endhere} transition={{ delay: .3, duration: .4 }}>Islamia University Peshawar, Expected Graduation Date (2027)</motion.p>
+          <motion.p initial={start} animate={endhere} transition={{ delay: .3, duration: .4 }}>Islamia University Peshawar, Expected <br />  Graduation Date (2027)</motion.p>
         </div>
         
       </section>

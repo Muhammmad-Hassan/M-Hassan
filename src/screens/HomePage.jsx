@@ -43,35 +43,30 @@ const HomePage = () => {
             <div className="mb-6 lg:mb-12 lg:mt-7">
               <motion.h2
                 className="text-3xl font-bold md:text-4xl"
-                initial={{ opacity: 0, y: -10 }}
+                initial={{ opacity: 0, y: -40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: .6 }}
+                transition={{ delay: .2, duration: 0.2 }}
               >
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
                     "Hello 👋 it`s Me Hassan and",
-                    2000, // wait 1s before replacing "Mice" with "Hamsters"
-                    
-                    "I am React.js developer 👨🏻‍💻 ", 
-                    2000,
-                    `I am Node.js  developer 👨🏻‍💻 `, 
-                    2000,
-                    "I am Web  developer 👨🏻‍💻 ", 
-                    2000,
-                    
-                    "I am coder.",
-                    2000,
+                    3000, 
+
+                    "I am React.js developer 👨🏻‍💻 ",
+                    3000,
+                    `I am Node.js  developer 👨🏻‍💻 `,
+                    3000,
+                    "I am Coder.",
+                    3000,
                     "I am Programer.",
-                    2000,
-                    
+                    3000,
                   ]}
                   wrapper="span"
-                  speed={50}
+                  speed={70}
                   repeat={Infinity}
                 />
               </motion.h2>
-              
             </div>
             <motion.div
               className="mt-2"
@@ -97,32 +92,20 @@ const HomePage = () => {
               animate="visible"
               variants={container}
             >
-              <Link to="/resume">
-                <motion.div
-                  className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px] text-sm lg:text-lg bg-orange-400 rounded-full flex items-center justify-center"
-                  variants={item}
-                >
-                  <span>Resume</span>
-                </motion.div>
-              </Link>
-
-              <Link to="/projects">
-                <motion.div
-                  className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px] text-sm lg:text-lg bg-red-500 rounded-full ml-3 flex items-center justify-center"
-                  variants={item}
-                >
-                  <span>Projects</span>
-                </motion.div>
-              </Link>
-
-              <Link to="/contact">
-                <motion.div
-                  className="w-[90px] border-2 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px] text-sm lg:text-lg bg-blue-300 rounded-full ml-3 flex items-center justify-center"
-                  variants={item}
-                >
-                  <span>Contacts</span>
-                </motion.div>
-              </Link>
+              {[
+                { endpoint: "/resume", endpointName: "Resume" },
+                { endpoint: "/projects", endpointName: "Projects" },
+                { endpoint: "/contact", endpointName: "Contacts" },
+              ].map((item, index) => (
+                <Link key={index} to={item.endpoint}>
+                  <motion.div
+                    className={`w-[90px] border-2 mx-1 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px] text-sm lg:text-lg ${index == 0 && "bg-red-500" || index == 1 && "bg-orange-400" || index == 2 && "bg-blue-300" }  rounded-full flex items-center justify-center`}
+                    variants={item}
+                  >
+                    <span>{item.endpointName}</span>
+                  </motion.div>
+                </Link>
+              ))}
             </motion.div>
           </div>
         </div>

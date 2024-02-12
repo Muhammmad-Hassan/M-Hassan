@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between  shadow-md h-[14%] p-4 items-center fixed w-full top-0 bg-white z-30">
+    <nav className="flex justify-between  shadow-md h-[12%] md:h-[10%] p-4 items-center fixed w-full top-0 bg-white z-30">
       <div className="flex items-center justify-center ml-2 lg:ml-8">
         <span>
           <img
@@ -38,7 +38,7 @@ const Navbar = () => {
         <Link
           to={"/"}
           onClick={() =>
-            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+            menuOpen  ? setMenuOpen(!menuOpen) : menuOpen
           }
           className="lg:mx-2 rounded-lg  transition-all duration-200 hover:shadow-xl px-3"
         >
@@ -47,7 +47,7 @@ const Navbar = () => {
         |
         <Link
           onClick={() =>
-            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+            menuOpen  ? setMenuOpen(!menuOpen) : menuOpen
           }
           to={"/resume"}
           className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
@@ -58,7 +58,7 @@ const Navbar = () => {
         <Link
           to="/projects"
           onClick={() =>
-            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+            menuOpen  ? setMenuOpen(!menuOpen) : menuOpen
           }
           className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
         >
@@ -67,7 +67,7 @@ const Navbar = () => {
         |
         <Link
           onClick={() =>
-            menuOpen === true ? setMenuOpen(!menuOpen) : menuOpen
+            menuOpen  ? setMenuOpen(!menuOpen) : menuOpen
           }
           to={"/contact"}
           className="lg:mx-2  rounded-lg transition-all duration-200 hover:shadow-xl px-3"

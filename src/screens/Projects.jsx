@@ -33,9 +33,9 @@ function Projects() {
     <div className="h-auto w-full flex items-center justify-center p-6 mt-24 lg:mt-52">
       <div className="h-full w-full lg:w-[75%]">
         <motion.h1 className="text-4xl font-bold" 
-        initial={{opacity:0, y:-40 , scale: .7}}
-        animate={{opacity:1 , y:0 , scale:1}}
-        transition={{delay:.3, duration:.5}}
+        initial={{opacity:0, y:-200 }}
+        animate={{opacity:1  , y: 0}}
+        transition={{ type :"spring" , stiffness: 120}}
         >Projects</motion.h1>
         <ProjectItem
           title="Project Name 01"

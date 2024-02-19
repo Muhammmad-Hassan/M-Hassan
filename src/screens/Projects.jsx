@@ -17,9 +17,9 @@ const ProjectItem = ({ title, description }) => {
         </p>
       </div>
       <motion.img
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3, duration: .5 }}
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
+        transition={{ delay: 0.5, duration: .5 }}
         src={projects}
         className="w-[500px] ml-auto rounded-md bg-blue-300"
         alt=""

@@ -12,16 +12,10 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between  shadow-md h-[70px] md:h-[80px] p-4 items-center fixed w-full top-0 bg-white z-30">
-      <div className="flex items-center justify-center ml-2 lg:ml-8">
-        <span>
-          <img
-            className="w-9 h-9 rounded-full bg-orange-500 lg:w-12 lg:h-12"
-            src={logo}
-            alt=""
-          />
-        </span>
-        <h2 className="font-bold text-lg lg:text-3xl ml-2 lg:ml-3">
-          <span className="text-orange-400 tracking-wider">H</span>assan
+      <div className="flex items-center justify-center ml-1 lg:ml-2">
+        
+        <h2 className="font-bold text-lg lg:text-3xl">
+          <span className="text-orange-400 tracking-wider text-7xl/2 font-extrabold">H</span>assan
         </h2>
         <span className="text-sm ml-1 lg:text-lg mt-1 ">Web dev</span>
       </div>

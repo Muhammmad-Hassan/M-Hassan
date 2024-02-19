@@ -3,7 +3,6 @@ import mainimg from "../assets/main2imge.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { HiOutlineComputerDesktop } from "react-icons/hi2";
 
 const HomePage = () => {
   const container = {
@@ -28,11 +27,11 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="h-[100%] container mb-12 mt-44 lg:mt-32   flex  items-center justify-center  flex-col-reverse lg:flex-row ">
+      <div className="h-[100%] container mb-10 mt-36 md:mt-20   flex  items-center justify-center  flex-col-reverse lg:flex-row ">
         <div className="h-[100%] w-[100%]  flex items-center justify-center p-8 lg:justify-end ">
           <motion.img
             src={mainimg}
-            className="w-[350px] h-[350px] md:w-[410px] md:h-[410px]   rounded-full grayscale lg:w-[500px] lg:h-[500px]"
+            className="w-[320px] h-[320px] md:w-[380px] md:h-[380px] object-center  rounded-full grayscale lg:w-[410px] lg:h-[410px]"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: .5 }}
@@ -41,9 +40,9 @@ const HomePage = () => {
 
         <div className="h-full w-full p-6 flex items-center justify-center lg:justify-start ">
           <div className="">
-            <div className="mb-6 lg:mb-12 lg:mt-7">
+            <div className="mb-4 lg:mb-12 lg:mt-7">
               <motion.h2
-                className="text-3xl  font-bold md:text-4xl"
+                className="text-2xl  font-bold md:text-4xl"
                 initial={{ opacity: 0, y: -300 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 160  }}
@@ -75,11 +74,11 @@ const HomePage = () => {
               animate="visible"
               variants={container}
             >
-              <motion.h3 className="text-2xl font-bold mb-2" variants={item}>
+              <motion.h3 className=" text-lg font-semibold mb-2 md:text-3-xl/2" variants={item}>
                 A Bit About Me
               </motion.h3>
               <motion.p
-                className="text-lg tracking-wider text-justify"
+                className="text-md tracking-wider text-justify"
                 variants={item}
               >
                 Enthusiastic React.js developer with a knack for <br /> building
@@ -100,10 +99,10 @@ const HomePage = () => {
               ].map((item, index) => (
                 <Link key={index} to={item.endpoint}>
                   <motion.div
-                    className={`w-[90px] border-2 mx-1 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] lg:w-[150px] lg:h-[150px] md:w-[110px] md:h-[110px]  text-sm lg:text-lg ${index == 0 && "bg-red-500" || index == 1 && "bg-orange-400" || index == 2 && "bg-blue-300" }  rounded-full flex items-center justify-center`}
+                    className={`w-[90px] border-2 mx-1 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] duration-300 lg:w-[120px] lg:h-[120px] md:w-[110px] md:h-[110px]    text-sm lg:text-lg ${index == 0 && "bg-red-500" || index == 1 && "bg-orange-400" || index == 2 && "bg-blue-300" }  rounded-full flex items-center justify-center`}
                     variants={item}
                   >
-                    <span>{item.endpointName}</span>
+                    <span className="font-bold">{item.endpointName}</span>
                   </motion.div>
                 </Link>
               ))}

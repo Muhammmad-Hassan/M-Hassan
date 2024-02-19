@@ -2,17 +2,21 @@ import React from "react";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 function Footer() {
+  const handleEmailClick = () => {
+    window.location.href = "mailto:hassankhan5uy99@gmail.com";
+  };
+
   return (
     <>
       <hr className=" h-[2px]" />
-      <div className=" flex flex-col h-[20%] justify-between px-16 py-8 lg:flex-row">
+      <div className=" flex flex-col h-[20%] justify-between px-8 md:px-16 py-8 lg:flex-row">
         <div>
           <h2 className=" font-semibold text-2xl">Phone</h2>
           <span>+923132402444</span>
         </div>
         <div className="mt-6 lg:mt-0">
           <h2 className=" font-semibold text-2xl">Email</h2>
-          <span>hassankhan5uy99@gmail.com</span>
+          <span onClick={handleEmailClick} className=" cursor-pointer hover:text-blue-500 hover:underline">hassankhan5uy99@gmail.com</span>
         </div>
         <div className="mt-6 lg:mt-0">
           <h2 className=" font-semibold text-2xl">Follow Me</h2>

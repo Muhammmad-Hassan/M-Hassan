@@ -109,7 +109,7 @@ const Resume = () => {
           <div>
             <h2 className="text-2xl font-semibold">About me</h2>
             <hr className="w-[100%] h-1 bg-gray-800" />
-            <p className="w-[250px] text-center">
+            <p className="w-[250px]   lg:text-center">
               I am a versatile full-stack developer and programmer, crafting
               seamless digital experiences from concept to execution. My passion
               lies in transforming ideas into elegant,functional, and scalable

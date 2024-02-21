@@ -1,63 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import projects from "../assets/projects.jpg";
+import por1img from "../assets/pro12.png";
+import ProjectItem from "./ProjectItem";
 
-const ProjectItem = ({ title, description }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: .3, duration: .5 }}
-      className="flex mt-10 lg:mt-40 flex-col lg:flex-row rounded-md"
-    >
-      <div>
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="lg:w-[75%] mb-5 text-justify tracking-wide mt-8 text-xl">
-          {description}
-        </p>
-      </div>
-      <motion.img
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
-        transition={{ delay: 0.5, duration: .5 }}
-        src={projects}
-        className="w-[500px] ml-auto rounded-md bg-blue-300"
-        alt=""
-      />
-    </motion.div>
-  );
-};
 
+
+// Parent Component ++++++++++++++++++
 function Projects() {
   return (
     <div className="h-auto w-full flex items-center justify-center p-6 mt-24 lg:mt-52">
-      <div className="h-full w-full lg:w-[75%]">
-        <motion.h1 className="text-4xl font-bold" 
-        initial={{opacity:0, y:-200 }}
-        animate={{opacity:1  , y: 0}}
-        transition={{ type :"spring" , stiffness: 120}}
-        >Projects</motion.h1>
-        <ProjectItem
-          title="Project Name 01"
-          description="this is my first portfolio and welcome to my portfolio
-                        this is my first portfolio and welcome to my portfolio
-                        this is my first portfolio and welcome to my portfolio
-                        this is my first portfolio and welcome to my portfolio."
-        />
-        <ProjectItem
-          title="Project Name 02"
-          description="this is my first portfolio and welcome to my portfolio
-                        this is my first portfolio and welcome to my portfolio
-                        this is my first portfolio and welcome to my portfolio
-                        this is my first portfolio and welcome to my portfolio."
-        />
-        <ProjectItem
-          title="Project Name 03"
-          description="Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Eligendi cumque enim eaque iure adipisci reiciendis porro illum
-                        dolore laboriosam alias iste veritatis odio perspiciatis animi,
-                        facere iusto distinctio recusandae unde."
-        />
+      <div className="h-full w-full lg:w-[90%]">
+        <motion.h1
+          className="text-4xl font-bold"
+          initial={{ opacity: 0, y: -200 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 120 }}
+        >
+          Projects
+        </motion.h1>
+        {[
+          {
+            id: 1,
+            codeLink: "https://github.com/Muhammmad-Hassan/My-cafe",
+            webLink: "https://muhammmad-hassan.github.io/My-cafe",
+            img: por1img,
+            title: "Food Web App",
+            description:
+              "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
+          },
+          {
+            id: 2,
+            img: projects,
+            title: "Project 02",
+            description:
+              "that project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
+          },
+          {
+            id: 3,
+            img: projects,
+            title: "Project 03",
+            description:
+              "they project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
+          },
+        ].map((item) => (
+          <div key={item.id}>
+            <ProjectItem
+              img={item.img}
+              title={item.title}
+              description={item.description}
+              codeLink={item.codeLink}
+              webLink={item.webLink}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

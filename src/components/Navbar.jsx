@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Hamburger from "hamburger-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/main2imge.jpg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  useEffect(() => {
+    const scrollHandler = () => {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+      setScrollProgress(scrollPercentage);
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
+
   return (
-    <nav className="flex justify-between  shadow-md h-[70px] md:h-[80px] p-4 items-center fixed w-full top-0 bg-white z-30">
+    <nav className="flex justify-between shadow-md h-[55px] md:h-[60px] p-4 items-center fixed w-full top-0 bg-white z-30">
       <div className="flex items-center justify-center ml-1 lg:ml-2">
         <h2 className="font-bold text-lg lg:text-3xl">
           <span className="text-orange-400 tracking-wider text-7xl/2 font-extrabold">
@@ -25,15 +41,15 @@ const Navbar = () => {
         <Hamburger toggled={menuOpen} toggle={toggleMenu} />
       </div>
       <div
-        className={`lg:flex items-center font-medium justify-center  ${
+        className={`lg:flex items-center font-medium justify-center ${
           menuOpen
-            ? "absolute flex flex-col right-0 w-full h-[100vh] bg-white z-50 shadow-xl rounded-lg top-0 "
+            ? "absolute flex flex-col right-0 w-full h-[100vh] bg-white z-50 shadow-xl rounded-lg top-0"
             : "hidden"
-        }   `}
+        }`}
       >
         <div className="lg:hidden me-2 fixed right-4 top-3">
-        <Hamburger toggled={menuOpen} toggle={toggleMenu} />
-      </div>
+          <Hamburger toggled={menuOpen} toggle={toggleMenu} />
+        </div>
         <Link
           to={"/"}
           onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
@@ -66,6 +82,11 @@ const Navbar = () => {
           Contact
         </Link>
       </div>
+      {/* The line that appears at the bottom of the navbar */}
+      <div
+        className="bg-yellow-500 h-[2px] absolute bottom-0 left-0"
+        style={{ width: `${scrollProgress}%` }}
+      />
     </nav>
   );
 };

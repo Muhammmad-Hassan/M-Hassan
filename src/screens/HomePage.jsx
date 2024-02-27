@@ -51,19 +51,19 @@ const HomePage = () => {
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
                     "Hello 👋 it`s Me Hassan and",
-                    3000, 
+                    2000, 
 
                     "I am React.js developer.",
-                    3000,
+                    2000,
                     `I am Node.js  developer.`,
-                    3000,
+                    2000,
                     "I am Coder.",
-                    3000,
+                    2000,
                     "I am Programer.",
-                    3000,
+                    2000,
                   ]}
                   wrapper="span"
-                  speed={70}
+                  speed={50}
                   repeat={Infinity}
                 />
               </motion.h2>

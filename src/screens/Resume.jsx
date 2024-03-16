@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 
-import pdfurl from "../assets/m-hassan.jpg";
 import cvImg from "../assets/main2imge.jpg";
 
 const Resume = () => {
@@ -11,7 +10,7 @@ const Resume = () => {
 
   return (
     <motion.div // Wrap your main div with motion.div
-      className="container mx-auto p-4 mt-20 px-7 lg:px-52"
+      className=" mx-auto p-4 mt-20 px-7 lg:px-52"
       initial={{ opacity: 0 }} // Set initial animation properties
       animate={{ opacity: 1 }} // Set animation properties
       transition={{ duration: 1 }} // Set transition duration
@@ -39,7 +38,7 @@ const Resume = () => {
               </div>
               <div>
                 <span>🔗</span>
-                <span className="ml-1">Portfolio/linkedin</span>
+                <span className="ml-1">linkedin</span>
               </div>
             </div>
             <div>

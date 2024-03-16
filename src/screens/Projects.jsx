@@ -7,7 +7,7 @@ import ProjectItem from "./ProjectItem";
 function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
-
+  
   useEffect(() => {
     const element = ref.current;
     const onScroll = () => {
@@ -82,6 +82,7 @@ function Projects() {
         ))}
       </div>
     </div>
+    
   );
 }
 

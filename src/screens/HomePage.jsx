@@ -95,7 +95,6 @@ const HomePage = () => {
               {[
                 { endpoint: "/resume", endpointName: "Resume" },
                 { endpoint: "/projects", endpointName: "Projects" },
-                { endpoint: "/contact", endpointName: "Contacts" },
               ].map((item, index) => (
                 <Link key={index} to={item.endpoint}>
                   <motion.div

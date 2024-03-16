@@ -47,7 +47,7 @@ const Navbar = () => {
             : "hidden"
         }`}
       >
-        <div className="lg:hidden me-2 fixed right-4 top-3">
+        <div className="lg:hidden me-2 fixed right-4 top-2">
           <Hamburger toggled={menuOpen} toggle={toggleMenu} />
         </div>
         <Link
@@ -73,14 +73,8 @@ const Navbar = () => {
         >
           Projects
         </Link>
-        |
-        <Link
-          to={"/contact"}
-          onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
-          className="lg:mx-2  text-xl lg:text-sm  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
-        >
-          Contact
-        </Link>
+        
+       
       </div>
       {/* The line that appears at the bottom of the navbar */}
       <div

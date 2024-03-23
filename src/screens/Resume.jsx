@@ -8,6 +8,17 @@ const Resume = () => {
     window.location.href = "mailto:hassankhan5uy99@gmail.com";
   };
 
+  const handlePhoneClick = () => {
+    window.location.href = "tel:+923132402444";
+  };
+
+  const handleLinkedInClick = () => {
+    window.open(
+      "https://www.linkedin.com/in/muhammad-hassan-76a17b272/",
+      "_blank"
+    );
+  };
+
   return (
     <motion.div // Wrap your main div with motion.div
       className=" mx-auto p-4 mt-20 px-7 lg:px-52"
@@ -34,17 +45,29 @@ const Resume = () => {
             <div>
               <div className="min-w-max">
                 <span>📞</span>
-                <span className="ml-1">+923132402444</span>
+                <span className="ml-1 text-blue-500" onClick={handlePhoneClick}>
+                  +923132402444
+                </span>
               </div>
               <div>
                 <span>🔗</span>
-                <span className="ml-1">linkedin</span>
+                <span
+                  className="ml-1 cursor-pointer text-blue-500"
+                  onClick={handleLinkedInClick}
+                >
+                  linkedin
+                </span>
               </div>
             </div>
             <div>
               <div>
                 <span className="text-blue-500">@</span>
-                <span className="ml-1 hover:underline hover:cursor-pointer text-blue-500" onClick={handleEmailClick}>hassankhan5uy99@gmail.com</span>
+                <span
+                  className="ml-1 hover:underline hover:cursor-pointer text-blue-500"
+                  onClick={handleEmailClick}
+                >
+                  hassankhan5uy99@gmail.com
+                </span>
               </div>
               <div className=" min-w-max">
                 <span>📍</span>
@@ -104,22 +127,25 @@ const Resume = () => {
             </div>
           </motion.div>
         </div>
-        <div className="ml-2 ">
+        <div className="">
           <div>
             <h2 className="text-2xl font-semibold">About me</h2>
             <hr className="w-[100%] h-1 bg-gray-800" />
-            <p className="w-[250px]   lg:text-center">
-              I am a versatile full-stack developer and programmer, crafting
-              seamless digital experiences from concept to execution. My passion
-              lies in transforming ideas into elegant,functional, and scalable
-              web solutions.
+            <p className="lg:w-[250px]   text-justify">
+              Experienced front-end developer skilled in React.js, Tailwind CSS,
+              and JavaScript. I excel at creating responsive, visually appealing
+              user interfaces and optimizing component styling with Tailwind
+              CSS. Strong understanding of backend fundamentals ensures smooth
+              functionality and data flow. Passionate about intuitive solutions
+              and collaboration. Let`s connect for innovative web development
+              opportunities!
             </p>
           </div>
           <div>
             <h2 className="text-2xl font-semibold">Skills</h2>
             <hr className="w-[100%] h-1 bg-gray-800" />
 
-            <div className="flex mt-2 flex-wrap w-[250px]">
+            <div className="flex mt-2 flex-wrap lg:w-[250px]">
               {[
                 { id: 1, name: "HTML" },
                 { id: 2, name: "CSS" },

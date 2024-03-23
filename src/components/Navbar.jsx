@@ -41,15 +41,13 @@ const Navbar = () => {
         <Hamburger toggled={menuOpen} toggle={toggleMenu} />
       </div>
       <div
-        className={`lg:flex items-center font-medium justify-center ${
+        className={`lg:flex items-center font-medium  justify-center  ${
           menuOpen
-            ? "absolute flex flex-col right-0 w-full h-[100vh] bg-white z-50 shadow-xl rounded-lg top-0"
-            : "hidden"
+            ? "absolute flex   flex-col right-2 w-[200px] h-[200px] bg-white z-50 shadow-xl rounded-lg top-14 "
+            : "hidden "
         }`}
       >
-        <div className="lg:hidden me-2 fixed right-4 top-2">
-          <Hamburger toggled={menuOpen} toggle={toggleMenu} />
-        </div>
+        
         <Link
           to={"/"}
           onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}

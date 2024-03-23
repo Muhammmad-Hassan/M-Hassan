@@ -10,7 +10,7 @@ import Resume from "./screens/Resume";
 function App() {
   return (
     <BrowserRouter basename="/M-Hassan" >
-      <div className="h-[100vh]  w-[100%]">
+      <div className="h-calc-screen-160  w-[100%]">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

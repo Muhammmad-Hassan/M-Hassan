@@ -27,14 +27,14 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="h-[100%] container mb-10 mt-36 md:mt-20   flex  items-center justify-center  flex-col-reverse lg:flex-row ">
+      <div className="h-[100%] container mb-10 mt-20    flex  items-center justify-center  flex-col-reverse lg:flex-row ">
         <div className="h-[100%] w-[100%]  flex items-center justify-center p-8 lg:justify-end ">
           <motion.img
             src={mainimg}
-            className="w-[320px] h-[320px] md:w-[380px] md:h-[380px] object-center  rounded-full grayscale lg:w-[410px] lg:h-[410px]"
+            className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] object-center  rounded-full grayscale lg:w-[410px] lg:h-[410px]"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: .5 }}
+            transition={{ duration: 0.5 }}
           />
         </div>
 
@@ -45,13 +45,13 @@ const HomePage = () => {
                 className="text-2xl  font-bold md:text-4xl"
                 initial={{ opacity: 0, y: -300 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 160  }}
+                transition={{ type: "spring", stiffness: 160 }}
               >
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
                     "Hello 👋 it`s Me Hassan and",
-                    2000, 
+                    2000,
 
                     "I am React.js developer.",
                     2000,
@@ -74,16 +74,24 @@ const HomePage = () => {
               animate="visible"
               variants={container}
             >
-              <motion.h3 className=" text-lg font-semibold mb-2 md:text-3-xl/2" variants={item}>
+              <motion.h3
+                className=" text-lg font-semibold mb-2 md:text-3-xl/2"
+                variants={item}
+              >
                 A Bit About Me
               </motion.h3>
               <motion.p
-                className="text-md tracking-wider text-justify"
+                className="text-md tracking-wider text-justify lg:w-[29rem]"
                 variants={item}
+
               >
-                Enthusiastic React.js developer with a knack for <br /> building
-                engaging user interfaces, proficient in <br /> creating seamless
-                and responsive web applications.
+                Experienced front-end developer skilled in React.js, Tailwind
+                CSS, and JavaScript. I excel at creating responsive, visually
+                appealing user interfaces and optimizing component styling with
+                Tailwind CSS. Strong understanding of backend fundamentals
+                ensures smooth functionality and data flow. Passionate about
+                intuitive solutions and collaboration. Let`s connect for
+                innovative web development opportunities!
               </motion.p>
             </motion.div>
             <motion.div
@@ -98,7 +106,11 @@ const HomePage = () => {
               ].map((item, index) => (
                 <Link key={index} to={item.endpoint}>
                   <motion.div
-                    className={`w-[90px] border-2 mx-1 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] duration-300 lg:w-[120px] lg:h-[120px] md:w-[110px] md:h-[110px]    text-sm lg:text-lg ${index == 0 && "bg-red-500" || index == 1 && "bg-orange-400" || index == 2 && "bg-blue-300" }  rounded-full flex items-center justify-center`}
+                    className={`w-[90px] border-2 mx-1 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] duration-300 lg:w-[120px] lg:h-[120px] md:w-[110px] md:h-[110px]    text-sm lg:text-lg ${
+                      (index == 0 && "bg-red-500") ||
+                      (index == 1 && "bg-orange-400") ||
+                      (index == 2 && "bg-blue-300")
+                    }  rounded-full flex items-center justify-center`}
                     variants={item}
                   >
                     <span className="font-bold">{item.endpointName}</span>

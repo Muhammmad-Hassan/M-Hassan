@@ -26,14 +26,14 @@ function ProjectItem({ title, description, img, codeLink, webLink }) {
           <a href={codeLink}>
             <motion.button
               className="  hover:bg-gray-300  py-1  px-3 rounded-md font-semibold mt-2 text-[0.80rem] border border-gray-500"
-              whileTap={{ scale: 1.1 }}
+              whileTap={{ scale: 1.2 }}
              transition={{ type: "spring", stiffness: 400, damping: 10 }}>
               Source Code
             </motion.button>
           </a>
           <a href={webLink}>
             <motion.button
-              whileTap={{ scale: 1.1 }}
+              whileTap={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               className="  hover:bg-gray-300  py-1  px-3 rounded-md font-semibold mt-2 text-[0.80rem] border border-gray-500"
             >

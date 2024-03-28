@@ -31,7 +31,7 @@ const HomePage = () => {
         <div className="h-[100%] w-[100%]  flex items-center justify-center p-8 lg:justify-end ">
           <motion.img
             src={mainimg}
-            className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] object-center  rounded-full grayscale lg:w-[410px] lg:h-[410px]"
+            className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px]  object-cover  rounded-full grayscale lg:w-[410px] lg:h-[410px]"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}

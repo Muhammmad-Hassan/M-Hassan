@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import projects from "../assets/projects.jpg";
-import por1img from "../assets/pro12.png";
+import pro1img from "../assets/pro1.png";
+import pro2img from "../assets/pro2.png";
 import ProjectItem from "./ProjectItem";
 
 function Projects() {
@@ -22,21 +23,22 @@ function Projects() {
   }, []);
 
   const projectList = [
+   
     {
       id: 1,
-      codeLink: "https://github.com/Muhammmad-Hassan/My-cafe",
-      webLink: "https://muhammmad-hassan.github.io/My-cafe",
-      img: por1img,
-      title: "Food Web App",
-      description:
-        "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
+      img: pro2img,
+      webLink: "https://racelookup.com/store",
+      title: "Project 02",
+      description:"A venture dedicated to organizing and facilitating competitionsandmarathons for individuals engaged in racing activities",
     },
     {
       id: 2,
-      img: projects,
-      title: "Project 02",
+      codeLink: "https://github.com/Muhammmad-Hassan/My-cafe",
+      webLink: "https://muhammmad-hassan.github.io/My-cafe",
+      img: pro1img,
+      title: "Food Web App",
       description:
-        "that project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
+        "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
     },
     {
       id: 3,

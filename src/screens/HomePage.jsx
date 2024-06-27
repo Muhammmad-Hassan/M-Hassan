@@ -33,7 +33,7 @@ const HomePage = () => {
             src={mainimg}
             className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px]  object-cover  rounded-full grayscale lg:w-[410px] lg:h-[410px]"
             initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 1 }}  
             transition={{ duration: 0.5 }}
           />
         </div>
@@ -108,8 +108,7 @@ const HomePage = () => {
                   <motion.div
                     className={`w-[90px] border-2 mx-1 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] duration-300 lg:w-[120px] lg:h-[120px] md:w-[110px] md:h-[110px]    text-sm lg:text-lg ${
                       (index == 0 && "bg-red-500") ||
-                      (index == 1 && "bg-orange-400") ||
-                      (index == 2 && "bg-blue-300")
+                      (index == 1 && "bg-orange-400")
                     }  rounded-full flex items-center justify-center`}
                     variants={item}
                   >

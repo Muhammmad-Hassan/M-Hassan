@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import projects from "../assets/projects.jpg";
 import pro1img from "../assets/pro1.png";
 import pro2img from "../assets/pro2.png";
+import codevenator from "../assets/codevenator.png";
 import ProjectItem from "./ProjectItem";
 
 function Projects() {
@@ -41,12 +41,13 @@ function Projects() {
         "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
     },
     {
-      id: 3,
-      img: projects,
-      title: "Project 03",
+      id: 2,
+      codeLink: "",
+      webLink: "https://codevenator.com/",
+      img: codevenator,
+      title: "Food Web App",
       description:
-        "they project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
-    },
+        "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",    },
   ];
 
   return (

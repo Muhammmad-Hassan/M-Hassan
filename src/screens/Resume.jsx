@@ -1,9 +1,37 @@
-import React from "react";
-import { motion } from "framer-motion"; // Import motion from framer-motion
-
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import cvImg from "../assets/main2imge.jpg";
+import { useGSAP } from "@gsap/react";
 
 const Resume = () => {
+  const elementRef = useRef(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline()  
+
+    tl.from(elementRef.current, {
+      x: "-100vw",
+      delay: 0.1,
+      duration: 1,
+      ease : "elastic.out(.6, .5)"
+    });
+    tl.from(elementRef.current.querySelector(".education"), {
+      y: -100,
+      opacity: 0,
+      duration: .2,
+    });
+    tl.from(elementRef.current.querySelector(".aboutme"), {
+      y: 100,
+      opacity: 0,
+      duration: .2,
+    });
+    tl.from(elementRef.current.querySelector(".skills"), {
+      y: -100,
+      opacity: 0,
+      duration: .2,
+    });
+  }, []);
+
   const handleEmailClick = () => {
     window.location.href = "mailto:hassankhan5uy99@gmail.com";
   };
@@ -20,25 +48,15 @@ const Resume = () => {
   };
 
   return (
-    <motion.div // Wrap your main div with motion.div
-      className=" mx-auto p-4 mt-20 px-7 lg:px-52"
-      initial={{ opacity: 0 }} // Set initial animation properties
-      animate={{ opacity: 1 }} // Set animation properties
-      transition={{ duration: 1 }} // Set transition duration
-    >
-      <motion.div // Wrap your inner divs with motion.div
-        className="w-full h-full flex justify-between"
-        initial={{ x: "-100vw" }} // Set initial animation properties
-        animate={{ x: 0 }} // Set animation properties
-        transition={{ type: "spring", stiffness: 120 }} // Set transition properties
-      >
+    <div className="mx-auto p-4 mt-20 px-7 lg:px-52" ref={elementRef}>
+      <div className="w-full h-full flex justify-between">
         <div className="flex flex-col w-full">
           <div className="flex flex-col">
             <h1 className="md:text-[3vw] text-[6vw]  font-semibold">
               Muhammad Hassan
             </h1>
-            <h3 className=" text-xl font-semibold text-blue-500">
-              Web Devloper
+            <h3 className="text-xl font-semibold text-blue-500">
+              Web Developer
             </h3>
           </div>
           <div className="flex w-[50%] justify-between flex-col md:flex-row">
@@ -69,7 +87,7 @@ const Resume = () => {
                   hassankhan5uy99@gmail.com
                 </span>
               </div>
-              <div className=" min-w-max">
+              <div className="min-w-max">
                 <span>📍</span>
                 <span className="ml-1">Canal Road Abdara Peshawar.</span>
               </div>
@@ -81,70 +99,62 @@ const Resume = () => {
           className="w-[100px] h-[100px] md:w-[200px] md:h-[200px] rounded-md object-cover"
           alt=""
         />
-      </motion.div>
+      </div>
       <div className="flex justify-between lg:flex-row flex-col ">
-        {/* sections */}
         <div>
-          <motion.div // Wrap your education div with motion.div
-            initial={{ opacity: 0 }} // Set initial animation properties
-            animate={{ opacity: 1 }} // Set animation properties
-            transition={{ delay: 0.5 }} // Set transition properties
-          >
-            <div className="flex flex-col">
-              <h2 className="text-2xl font-semibold">Education</h2>
-              <hr className="w-[100%] h-1 bg-gray-800" />
-              {[
-                {
-                  id: 1,
-                  subject: "SOFTWARE ENG",
-                  school: "ISLAMIA COLLEGE UNIVERSITY PESHAWAR",
-                  date: "2023 - 2027",
-                },
-                {
-                  id: 2,
-                  subject: " FA.c COMPUTER SCIENCE",
-                  school: "CITY COLLEGE OF SCIENCE AND ARTS PESHAWAR",
-                  date: "2021 - 2023",
-                },
-                {
-                  id: 3,
-                  subject: "SSC",
-                  school: "AZA KHEL HIGH SCHOOL MATTANI PESHAWAR",
-                  date: "2019 - 2021",
-                },
-              ].map((edudata) => (
-                <div className="" key={edudata.id}>
-                  <h3 className="text-xl font-semibold ">{edudata.subject}</h3>
-                  <h5 className=" font-semibold text-blue-500 ">
-                    {edudata.school}
-                  </h5>
-                  <div>
-                    <span>&</span>
-                    <span>{edudata.date}</span>
-                  </div>
+          <div className="education">
+            <h2 className="text-2xl font-semibold">Education</h2>
+            <hr className="w-[100%] h-1 bg-gray-800" />
+            {[
+              {
+                id: 1,
+                subject: "SOFTWARE ENG",
+                school: "ISLAMIA COLLEGE UNIVERSITY PESHAWAR",
+                date: "2023 - 2027",
+              },
+              {
+                id: 2,
+                subject: " FA.c COMPUTER SCIENCE",
+                school: "CITY COLLEGE OF SCIENCE AND ARTS PESHAWAR",
+                date: "2021 - 2023",
+              },
+              {
+                id: 3,
+                subject: "SSC",
+                school: "AZA KHEL HIGH SCHOOL MATTANI PESHAWAR",
+                date: "2019 - 2021",
+              },
+            ].map((edudata) => (
+              <div className="" key={edudata.id}>
+                <h3 className="text-xl font-semibold ">{edudata.subject}</h3>
+                <h5 className="font-semibold text-blue-500 ">
+                  {edudata.school}
+                </h5>
+                <div>
+                  <span>&</span>
+                  <span>{edudata.date}</span>
                 </div>
-              ))}
-            </div>
-          </motion.div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="">
-          <div>
+        <div>
+          <div className="aboutme">
             <h2 className="text-2xl font-semibold">About me</h2>
             <hr className="w-[100%] h-1 bg-gray-800" />
-            <p className="lg:w-[250px]   text-justify">
+            <p className="lg:w-[250px] maaz  text-justify">
               Experienced front-end developer skilled in React.js, Tailwind CSS,
               and JavaScript. I excel at creating responsive, visually appealing
               user interfaces and optimizing component styling with Tailwind
               CSS. Strong understanding of backend fundamentals ensures smooth
               functionality and data flow. Passionate about intuitive solutions
-              and collaboration. Let`s connect for innovative web development
+              and collaboration. Let's connect for innovative web development
               opportunities!
             </p>
           </div>
-          <div>
+          <div className="skills">
             <h2 className="text-2xl font-semibold">Skills</h2>
             <hr className="w-[100%] h-1 bg-gray-800" />
-
             <div className="flex mt-2 flex-wrap lg:w-[250px]">
               {[
                 { id: 1, name: "HTML" },
@@ -168,9 +178,7 @@ const Resume = () => {
           </div>
         </div>
       </div>
-
-      {/* Add more sections for experience, projects, etc. */}
-    </motion.div>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ function Projects() {
       id: 1,
       img: pro2img,
       webLink: "https://racelookup.com/store",
-      title: "Project 02",
+      title: "Race LookUp",
       description:"A venture dedicated to organizing and facilitating competitionsandmarathons for individuals engaged in racing activities",
     },
     {
@@ -41,13 +41,13 @@ function Projects() {
         "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
     },
     {
-      id: 2,
+      id: 3,
       codeLink: "",
       webLink: "https://codevenator.com/",
       img: codevenator,
-      title: "Food Web App",
+      title: "Software Company",
       description:
-        "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",    },
+        "Developed a dynamic and user-friendly web application using the MERN stack for our software company, designed to streamline internal processes and enhance client interactions",    },
   ];
 
   return (

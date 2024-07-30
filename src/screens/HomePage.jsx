@@ -33,7 +33,7 @@ const HomePage = () => {
             src={mainimg}
             className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px]  object-cover  rounded-full grayscale lg:w-[410px] lg:h-[410px]"
             initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}  
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           />
         </div>
@@ -83,15 +83,16 @@ const HomePage = () => {
               <motion.p
                 className="text-md tracking-wider text-justify lg:w-[29rem]"
                 variants={item}
-
               >
-                Experienced front-end developer skilled in React.js, Tailwind
-                CSS, and JavaScript. I excel at creating responsive, visually
-                appealing user interfaces and optimizing component styling with
-                Tailwind CSS. Strong understanding of backend fundamentals
-                ensures smooth functionality and data flow. Passionate about
-                intuitive solutions and collaboration. Let`s connect for
-                innovative web development opportunities!
+                Experienced MERN stack developer skilled in React.js, Node.js,
+                Express, MongoDB, Tailwind CSS, and Framer Motion. I excel at
+                creating responsive, visually appealing user interfaces, and
+                optimizing component styling with Tailwind CSS. Proficient in
+                adding animations with Framer Motion to enhance user experience.
+                Strong understanding of backend fundamentals ensures smooth
+                functionality and data flow. Passionate about intuitive
+                solutions and collaboration. Let's connect for innovative web
+                development opportunities!
               </motion.p>
             </motion.div>
             <motion.div
@@ -107,8 +108,8 @@ const HomePage = () => {
                 <Link key={index} to={item.endpoint}>
                   <motion.div
                     className={`w-[90px] border-2 mx-1 border-solid border-black hover:bg-white cursor-pointer transition-all h-[90px] duration-300 lg:w-[120px] lg:h-[120px] md:w-[110px] md:h-[110px]    text-sm lg:text-lg ${
-                      (index == 0 && "bg-red-500") ||
-                      (index == 1 && "bg-orange-400")
+                      (index == 0 && "bg-gray-200") ||
+                      (index == 1 && "bg-gray-200")
                     }  rounded-full flex items-center justify-center`}
                     variants={item}
                   >

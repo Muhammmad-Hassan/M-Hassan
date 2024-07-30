@@ -7,28 +7,28 @@ const Resume = () => {
   const elementRef = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline()  
+    const tl = gsap.timeline();
 
     tl.from(elementRef.current, {
       x: "-100vw",
       delay: 0.1,
       duration: 1,
-      ease : "elastic.out(.6, .5)"
+      ease: "elastic.out(.6, .5)",
     });
     tl.from(elementRef.current.querySelector(".education"), {
       y: -100,
       opacity: 0,
-      duration: .2,
+      duration: 0.2,
     });
     tl.from(elementRef.current.querySelector(".aboutme"), {
       y: 100,
       opacity: 0,
-      duration: .2,
+      duration: 0.2,
     });
     tl.from(elementRef.current.querySelector(".skills"), {
       y: -100,
       opacity: 0,
-      duration: .2,
+      duration: 0.2,
     });
   }, []);
 
@@ -46,6 +46,19 @@ const Resume = () => {
       "_blank"
     );
   };
+
+  const educationData = [
+    {
+      id: 1,
+      subject: "SOFTWARE ENG",
+      school: "ISLAMIA COLLEGE UNIVERSITY PESHAWAR",
+    },
+    {
+      id: 2,
+      subject: " FA.c COMPUTER SCIENCE",
+      school: "CITY COLLEGE OF SCIENCE AND ARTS PESHAWAR",
+    },
+  ];
 
   return (
     <div className="mx-auto p-4 mt-20 px-7 lg:px-52" ref={elementRef}>
@@ -105,48 +118,30 @@ const Resume = () => {
           <div className="education">
             <h2 className="text-2xl font-semibold">Education</h2>
             <hr className="w-[100%] h-1 bg-gray-800" />
-            {[
-              {
-                id: 1,
-                subject: "SOFTWARE ENG",
-                school: "ISLAMIA COLLEGE UNIVERSITY PESHAWAR",
-                date: "2023 - 2027",
-              },
-              {
-                id: 2,
-                subject: " FA.c COMPUTER SCIENCE",
-                school: "CITY COLLEGE OF SCIENCE AND ARTS PESHAWAR",
-                date: "2021 - 2023",
-              },
-              {
-                id: 3,
-                subject: "SSC",
-                school: "AZA KHEL HIGH SCHOOL MATTANI PESHAWAR",
-                date: "2019 - 2021",
-              },
-            ].map((edudata) => (
-              <div className="" key={edudata.id}>
+            {educationData.map((edudata) => (
+              <div className=" my-2" key={edudata.id}>
                 <h3 className="text-xl font-semibold ">{edudata.subject}</h3>
                 <h5 className="font-semibold text-blue-500 ">
                   {edudata.school}
                 </h5>
                 <div>
-                  <span>&</span>
                   <span>{edudata.date}</span>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+          </div>
         <div>
           <div className="aboutme">
             <h2 className="text-2xl font-semibold">About me</h2>
             <hr className="w-[100%] h-1 bg-gray-800" />
-            <p className="lg:w-[250px] maaz  text-justify">
-              Experienced front-end developer skilled in React.js, Tailwind CSS,
-              and JavaScript. I excel at creating responsive, visually appealing
-              user interfaces and optimizing component styling with Tailwind
-              CSS. Strong understanding of backend fundamentals ensures smooth
+            <p className="lg:w-[250px] text-justify ">
+              Experienced MERN stack developer skilled in React.js, Node.js,
+              Express, MongoDB, Tailwind CSS, and Framer Motion. I excel at
+              creating responsive, visually appealing user interfaces, and
+              optimizing component styling with Tailwind CSS. Proficient in
+              adding animations with Framer Motion to enhance user experience.
+              Strong understanding of backend fundamentals ensures smooth
               functionality and data flow. Passionate about intuitive solutions
               and collaboration. Let's connect for innovative web development
               opportunities!

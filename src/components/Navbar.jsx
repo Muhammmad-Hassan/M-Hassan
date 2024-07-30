@@ -15,7 +15,8 @@ const Navbar = () => {
       const scrollHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
       const clientHeight = document.documentElement.clientHeight;
-      const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+      const scrollPercentage =
+        (scrollTop / (scrollHeight - clientHeight)) * 100;
       setScrollProgress(scrollPercentage);
     };
 
@@ -25,6 +26,9 @@ const Navbar = () => {
       window.removeEventListener("scroll", scrollHandler);
     };
   }, []);
+  const handlePhoneClick = () => {
+    window.location.href = "tel:+923132402444";
+  };
 
   return (
     <nav className="flex justify-between shadow-md h-[55px] md:h-[60px] p-4 items-center fixed w-full top-0 bg-white z-30">
@@ -36,49 +40,55 @@ const Navbar = () => {
           assan
         </h2>
         <span className="text-sm ml-1 lg:text-lg mt-1 ">Web dev</span>
+        <div
+          className={`lg:flex items-center font-medium  justify-center ml-3  ${
+            menuOpen
+              ? "absolute flex   flex-col right-2 w-[200px] h-[200px] bg-white z-50 shadow-xl rounded-lg top-14 "
+              : "hidden "
+          }`}
+        >
+          <Link
+            to={"/"}
+            onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
+            className="lg:mx-2  text-xl lg:text-sm rounded-lg  transition-all duration-200 hover:shadow-xl px-3"
+          >
+            Home
+          </Link>
+          |
+          <Link
+            to={"/resume"}
+            onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
+            className="lg:mx-2  text-xl lg:text-sm  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
+          >
+            Resume
+          </Link>
+          |
+          <Link
+            to="/projects"
+            onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
+            className="lg:mx-2  text-xl lg:text-sm  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
+          >
+            Projects
+          </Link>
+        </div>
       </div>
       <div className="lg:hidden me-2">
         <Hamburger toggled={menuOpen} toggle={toggleMenu} />
       </div>
-      <div
-        className={`lg:flex items-center font-medium  justify-center  ${
-          menuOpen
-            ? "absolute flex   flex-col right-2 w-[200px] h-[200px] bg-white z-50 shadow-xl rounded-lg top-14 "
-            : "hidden "
-        }`}
-      >
-        
-        <Link
-          to={"/"}
-          onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
-          className="lg:mx-2  text-xl lg:text-sm rounded-lg  transition-all duration-200 hover:shadow-xl px-3"
-        >
-          Home
-        </Link>
-        |
-        <Link
-          to={"/resume"}
-          onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
-          className="lg:mx-2  text-xl lg:text-sm  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
-        >
-          Resume
-        </Link>
-        |
-        <Link
-          to="/projects"
-          onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : menuOpen)}
-          className="lg:mx-2  text-xl lg:text-sm  rounded-lg transition-all duration-200 hover:shadow-xl px-3"
-        >
-          Projects
-        </Link>
-        
-       
-      </div>
+      
+
       {/* The line that appears at the bottom of the navbar */}
       <div
-        className="bg-yellow-500 h-[2px] absolute bottom-0 left-0"
+        className="bg-orange-300 h-[1px] absolute bottom-0 left-0"
         style={{ width: `${scrollProgress}%` }}
       />
+    <button
+  onClick={handlePhoneClick}
+  className="cursor-pointer bg-gradient-to-tl from-orange-500  to-purple-500 hover:opacity-90 text-white py-2 px-6 rounded-md font-bold "
+>
+  Call Now
+</button>
+
     </nav>
   );
 };

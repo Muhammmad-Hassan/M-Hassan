@@ -74,12 +74,7 @@ const Resume = () => {
           </div>
           <div className="flex w-[50%] justify-between flex-col md:flex-row">
             <div>
-              <div className="min-w-max">
-                <span>📞</span>
-                <span className="ml-1 text-blue-500" onClick={handlePhoneClick}>
-                  +923132402444
-                </span>
-              </div>
+             
               <div>
                 <span>🔗</span>
                 <span
@@ -100,10 +95,7 @@ const Resume = () => {
                   hassankhan5uy99@gmail.com
                 </span>
               </div>
-              <div className="min-w-max">
-                <span>📍</span>
-                <span className="ml-1">Canal Road Abdara Peshawar.</span>
-              </div>
+             
             </div>
           </div>
         </div>

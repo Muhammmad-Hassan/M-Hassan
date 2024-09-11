@@ -33,12 +33,12 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between shadow-md h-[55px] md:h-[60px] p-4 items-center fixed w-full top-0 bg-white z-30">
       <div className="flex items-center justify-center ml-1 lg:ml-2">
-        <h2 className="font-bold text-lg lg:text-3xl">
+        <Link to={"/"} className="font-bold text-lg lg:text-3xl">
           <span className="text-orange-400 tracking-wider text-7xl/2 font-extrabold">
             H
           </span>
           assan
-        </h2>
+        </Link>
         <span className="text-sm ml-1 lg:text-lg mt-1 ">Web dev</span>
         {/* <div
           className={`lg:flex items-center font-medium  justify-center ml-3  ${

@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Projects from "./screens/Projects";
 import Resume from "./screens/Resume";
 import NotFound from "./screens/NotFound";
+import CheckingSlider from "./screens/CheckingSlider";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
+          <Route path="/check" element={<CheckingSlider />} />
         </Routes>
         <Footer />
       </div>

@@ -14,22 +14,24 @@ const LandingPage = () => {
       id: 1,
       icon: <SiMongodb size={30} style={{ color: "#4DB33D" }} />,
       name: "MongoDB",
-    }, // green
+    },
     {
-      id: 2,
-      icon: <FaNodeJs size={30} style={{ color: "#8CC84B" }} />,
-      name: "Node.js",
-    }, // light green
+      id: 4,
+      icon: <SiExpress size={30} style={{ color: "#000000" }} />,
+      name: "Express.js",
+    }, // black // green
     {
       id: 3,
       icon: <SiReact size={30} style={{ color: "#61DAFB" }} />,
       name: "React.js",
     }, // blue
     {
-      id: 4,
-      icon: <SiExpress size={30} style={{ color: "#000000" }} />,
-      name: "Express.js",
-    }, // black
+      id: 2,
+      icon: <FaNodeJs size={30} style={{ color: "#8CC84B" }} />,
+      name: "Node.js",
+    }, // light green
+    
+    
   ];
   return (
     <div className="h-auto container mb-10 mt-20 flex items-center justify-center flex-col-reverse lg:flex-row">
@@ -96,7 +98,7 @@ const LandingPage = () => {
               {skills.map((skill) => (
                 <div
                   key={skill.id}
-                  className="relative flex items-center justify-center p-2 rounded-md border border-gray-400 shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-100"
+                  className="relative flex items-center justify-center p-2 rounded-md border border-gray-300 shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-100"
                 >
                   <div
                     className="flex items-center justify-center cursor-pointer rounded-md font-medium relative group"

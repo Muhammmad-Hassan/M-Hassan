@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
 
 function ProjectItem({ title, description, img, codeLink, webLink }) {
+  const { isDarkMode } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -12,48 +14,57 @@ function ProjectItem({ title, description, img, codeLink, webLink }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.3, duration: 0.5 }}
-      className="flex  mt-10 lg:mt-28 border-2 p-2 flex-col-reverse border-gray-500 lg:flex-row rounded-md"
+      transition={{ delay: 0.3, duration: 0.6 }}
+      className={`flex flex-col lg:flex-row items-start gap-6 p-4 rounded-xl border transition-all duration-300 ${
+        isDarkMode
+          ? "border-gray-700 bg-gray-800"
+          : "border-gray-300 bg-white shadow-sm"
+      }`}
     >
-      <div className="w-full">
-        <h2 className="text-2xl font-bold text-center  lg:bg-white mt-1 lg:mt-0 text-gray-500 lg:text-start">
-          {title}
-        </h2>
-        <p className="lg:w-[75%] mb-5 text-justify tracking-wide mt-8 text-xl">
-          {description}
-        </p>
-        <div className="flex justify-around lg:justify-start gap-3 px-1">
-          <a href={codeLink}>
-            <motion.button
-              className="  hover:bg-gray-300  py-1  px-3 rounded-md font-semibold mt-2 text-[0.80rem] border border-gray-500"
-              whileTap={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              Source Code
-            </motion.button>
-          </a>
-          <a href={webLink}>
-            <motion.button
-              whileTap={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="  hover:bg-gray-300  py-1  px-3 rounded-md font-semibold mt-2 text-[0.80rem] border border-gray-500"
-            >
-              See Live
-            </motion.button>
-          </a>
+      {/* Left: Text Content */}
+      <div className="w-full lg:w-1/2 space-y-4">
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <p className="text-sm leading-relaxed text-justify">{description}</p>
+
+        <div className="flex flex-wrap gap-3">
+          {codeLink && (
+            <a href={codeLink} target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileTap={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`px-4 py-1 rounded-md border text-sm font-semibold transition-colors duration-200 ${
+                  isDarkMode
+                    ? "border-gray-500 text-white hover:bg-gray-700"
+                    : "border-gray-500 text-black hover:bg-gray-100"
+                }`}
+              >
+                Source Code
+              </motion.button>
+            </a>
+          )}
+          {webLink && (
+            <a href={webLink} target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileTap={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`px-4 py-1 rounded-md border text-sm font-semibold transition-colors duration-200 ${
+                  isDarkMode
+                    ? "border-gray-500 text-white hover:bg-gray-700"
+                    : "border-gray-500 text-black hover:bg-gray-100"
+                }`}
+              >
+                See Live
+              </motion.button>
+            </a>
+          )}
         </div>
       </div>
 
-      <div className="h-full w-full   lg:border-l-2 border-gray-400 lg:pl-2">
+      {/* Right: Image */}
+      <div className="w-full lg:w-1/2">
         {isLoading && (
-          <div className="flex items-center justify-center w-full h-[247px] bg-gray-300 rounded sm:w-96 dark:bg-gray-700">
-            <svg
-              className="w-10 h-10 text-gray-200 dark:text-gray-600"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 18"
-            ></svg>
+          <div className="w-full h-[240px] flex items-center justify-center rounded bg-gray-300 dark:bg-gray-700">
+            <div className="w-8 h-8 border-4 border-white border-t-blue-500 rounded-full animate-spin"></div>
           </div>
         )}
         <motion.img
@@ -61,13 +72,12 @@ function ProjectItem({ title, description, img, codeLink, webLink }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
           src={img}
-          alt=""
+          alt={title}
           onLoad={handleImageLoad}
-          className={`w-[516px] h-[247px]  m-auto object-contain ${
-            isLoading ? "hidden" : ""
+          className={`w-full h-[240px] object-contain rounded-md shadow-sm transition-all ${
+            isLoading ? "hidden" : "block"
           }`}
         />
-        <hr className="h-[2px] bg-gray-500 lg:hidden" />
       </div>
     </motion.div>
   );

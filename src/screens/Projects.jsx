@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Slider from "react-slick"; // Import Slider from react-slick
 import pro1img from "../assets/pro1.png";
+import carproject from "../assets/auto4.png";
 import pro2img from "../assets/pro2.png";
 import codevenator from "../assets/codevenator.png";
 import ProjectItem from "./ProjectItem";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useTheme } from "../context/ThemeContext";
 
 function Projects() {
-  const [visibleItems, setVisibleItems] = useState({}); // Track visibility of each item
-  const refs = useRef([]); // Create refs for each item
+  const { isDarkMode } = useTheme();
+  const [visibleItems, setVisibleItems] = useState({});
+  const refs = useRef([]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -25,19 +25,10 @@ function Projects() {
     };
 
     window.addEventListener("scroll", onScroll);
+    onScroll(); // Trigger once in case items are already in view on load
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const settings = {
-    dots: true, // Show navigation dots
-    infinite: true, // Loop through the projects
-    speed: 600, // Slide transition speed
-    slidesToShow: 1, // Number of slides to show
-    slidesToScroll: 1, // Number of slides to scroll per swipe
-    autoplay: true, // Auto-slide feature
-    autoplaySpeed: 4000, // Slide change interval for autoplay
-    fade:true
-  };
 
   const projectList = [
     {
@@ -46,7 +37,7 @@ function Projects() {
       webLink: "https://racelookup.com/store",
       title: "Race LookUp",
       description:
-        "A venture dedicated to organizing and facilitating competitions and marathons for individuals engaged in racing activities",
+        "A venture dedicated to organizing and facilitating competitions and marathons for individuals engaged in racing activities.",
     },
     {
       id: 2,
@@ -55,39 +46,66 @@ function Projects() {
       img: codevenator,
       title: "Software Company",
       description:
-        "Developed a dynamic and user-friendly web application using the MERN stack for our software company, designed to streamline internal processes and enhance client interactions",
+        "Developed a dynamic and user-friendly web application using the MERN stack for our software company, designed to streamline internal processes and enhance client interactions.",
     },
     {
       id: 3,
-      codeLink: "https://github.com/Muhammmad-Hassan/My-cafe",
+      codeLink: "",
       webLink: "https://muhammmad-hassan.github.io/My-cafe",
       img: pro1img,
       title: "Food Web App",
       description:
-        "This project is a dynamic web application for ordering food online. It provides users with a platform to browse through various food items, add them to their cart, and proceed with the checkout process",
+        "A dynamic web app for online food ordering, enabling browsing, cart management, and checkout.",
+    },
+    {
+      id: 4,
+      codeLink: "",
+      webLink: "https://topgunautomobiles.com/",
+      img: carproject,
+      title: "Car Trade Platform",
+      description:
+        "A secure platform to buy, sell, and trade cars featuring detailed listings and advanced search filters.",
     },
   ];
 
   return (
-    <div id="projects" className="h-auto w-full mb-5 flex items-center justify-center p-6 mt-5 border-t border-gray-500 ">
-      <div className="h-full w-full lg:w-[90%]">
-        <h1 className="text-4xl font-bold">Projects</h1>
+    <section
+      id="projects"
+      className={`min-h-screen px-6 py-12 ${
+        isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-4xl font-extrabold mb-6 text-center">Projects</h2>
+        <div
+          className={`w-24 h-1 mx-auto mb-12 rounded-full ${
+            isDarkMode ? "bg-blue-400" : "bg-blue-600"
+          }`}
+        ></div>
 
-        <Slider {...settings} >
+        {/* Projects Grid */}
+        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           {projectList.map((item, index) => (
             <motion.div
               key={item.id}
-              ref={(el) => (refs.current[index] = el)} // Assign each item to its ref
+              ref={(el) => (refs.current[index] = el)}
               initial={{ opacity: 0, y: 50 }}
               animate={{
                 opacity: visibleItems[index] ? 1 : 0,
                 y: visibleItems[index] ? 0 : 50,
               }}
               transition={{
-                duration: 0.6,
+                duration: 0.7,
                 ease: "easeOut",
               }}
-              className="m"
+              whileHover={{ scale: 1.03 }}
+              className={`bg-transparent border rounded-xl shadow-md transition-shadow duration-300 cursor-pointer
+                ${
+                  isDarkMode
+                    ? "border-gray-700 hover:shadow-lg hover:border-blue-400"
+                    : "border-gray-200 hover:shadow-lg hover:border-blue-600"
+                }`}
             >
               <ProjectItem
                 img={item.img}
@@ -98,9 +116,9 @@ function Projects() {
               />
             </motion.div>
           ))}
-        </Slider>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

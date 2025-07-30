@@ -1,5 +1,5 @@
 import React from "react";
-import mainimg from "../assets/main2imge.jpg";
+import mainimg from "../assets/hassan4.jpg";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import {

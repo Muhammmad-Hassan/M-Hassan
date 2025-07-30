@@ -15,6 +15,7 @@ function ProjectItem({ title, description, img, codeLink, webLink }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.6 }}
+      style={{willChange: "transform, opacity"}}
       className={`flex flex-col lg:flex-row items-start gap-6 p-4 rounded-xl border transition-all duration-300 ${
         isDarkMode
           ? "border-gray-700 bg-gray-800"

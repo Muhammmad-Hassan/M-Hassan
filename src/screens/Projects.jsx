@@ -42,7 +42,7 @@ function Projects() {
     {
       id: 2,
       codeLink: "",
-      webLink: "https://codevenator.com/",
+      webLink: "https://client-codev.vercel.app/",
       img: codevenator,
       title: "Software Company",
       description:
@@ -96,7 +96,7 @@ function Projects() {
                 y: visibleItems[index] ? 0 : 50,
               }}
               transition={{
-                duration: 0.7,
+                duration: 0.3,
                 ease: "easeOut",
               }}
               whileHover={{ scale: 1.03 }}
